@@ -80,6 +80,57 @@ precp{
     margin-top: 310vh;
     
 }
+.rightSide{
+    
+    background-color: #f6f6f8;
+    width: 90%;
+    
+}
+.heading ul{
+    display: flex;
+    gap: 10px;
+    padding: 20px 50px;
+    font-weight: bold;
+    list-style-type:none ;  
+
+    
+}
+.heading a{
+    text-decoration: none;
+    color: black;
+
+}   
+.heading span{
+    
+    background-color: rgb(249, 252, 247);
+    border-radius: 40%;
+    margin-left: 700px;
+    font-size: large;
+    cursor: pointer;
+    padding: 5px;
+      
+}
+.heading span:hover{
+background-color: black;
+color: white;
+}
+.heading pre{
+    
+    background-color: rgb(254, 251, 251);
+    border-radius: 40%;
+    font-size: larger;
+    cursor: pointer;
+    /* padding: 5px; */
+
+
+}
+.heading pre:hover{
+    background-color: black;
+    color: white;
+    }
+
+
+
 
 
 

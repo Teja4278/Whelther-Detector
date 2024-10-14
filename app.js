@@ -236,62 +236,312 @@ document.getElementById("weekPage").addEventListener("click", function () {
 
                 })
                 // Week page background images for day cards
-                let backImg = [
-                    "https://i.ibb.co/qNv7NxZ/pc.webp", 
-                    "https://i.ibb.co/RDfPqXz/pcn.jpg", 
-                    "https://i.ibb.co/h2p6Yhd/rain.webp", 
-                    "https://i.ibb.co/WGry01m/cd.jpg", 
-                    "https://i.ibb.co/kqtZ1Gx/cn.jpg"
-                ];
-                
-                let dayImage = [
-                    "https://i.ibb.co/PZQXH8V/27.png", 
-                    "https://i.ibb.co/Kzkk59k/15.png", 
-                    "https://i.ibb.co/kBd2NTS/39.png",  
-                    "https://i.ibb.co/rb4rrJL/26.png", 
-                    "https://i.ibb.co/1nxNGHL/10.png"
-                ];
-                
-                // Set background image based on the day's icon
-                const weatherIcons = {
-                    "partly-cloudy-day": backImg[0],
-                    "partly-cloudy-night": backImg[1],
-                    "rain": backImg[2],
-                    "clear-day": backImg[3],
-                    "clear-night": backImg[4],
-                };
-                
-                document.getElementById("bgImage").style.backgroundImage = `url(${weatherIcons[weatherData.days[0].icon]})`;
-                
-                // Set images for each hour
-                for (let i = 0; i < 24; i++) {
-                    const hourIcon = weatherData.days[0].hours[i]?.icon; // Using optional chaining to avoid errors if hours[i] is undefined
-                    if (hourIcon) {
-                        const imageId = `${i}Image`; // Construct the image ID
-                        document.getElementById(imageId).src = dayImage[getImageIndex(hourIcon)];
-                    }
+                let backImg = ["https://i.ibb.co/qNv7NxZ/pc.webp", "https://i.ibb.co/RDfPqXz/pcn.jpg", "https://i.ibb.co/h2p6Yhd/rain.webp", "https://i.ibb.co/WGry01m/cd.jpg", "https://i.ibb.co/kqtZ1Gx/cn.jpg"]
+
+                if (weatherData.days[0].icon === "partly-cloudy-day") {
+                    document.getElementById("bgImage").style.backgroundImage = `url(${backImg[0]})`
+                } else if (weatherData.days[0].icon === "partly-cloudy-night") {
+                    document.getElementById("bgImage").style.backgroundImage = `url(${backImg[1]})`
+                } else if (weatherData.days[0].icon === "rain") {
+                    document.getElementById("bgImage").style.backgroundImage = `url(${backImg[2]})`
+                } else if (weatherData.days[0].icon === "clear-day") {
+                    document.getElementById("bgImage").style.backgroundImage = `url(${backImg[3]})`
+                } else if (weatherData.days[0].icon === "clear-night") {
+                    document.getElementById("bgImage").style.backgroundImage = `url(${backImg[4]})`
                 }
                 
-                // Function to get the image index based on the weather icon
-                function getImageIndex(icon) {
-                    switch (icon) {
-                        case "partly-cloudy-day":
-                            return 0;
-                        case "partly-cloudy-night":
-                            return 1;
-                        case "rain":
-                            return 2;
-                        case "clear-day":
-                            return 3;
-                        case "clear-night":
-                            return 4;
-                        default:
-                            return 0; // Default to partly cloudy day if unknown
-                    }
+                let dayImage = ["https://i.ibb.co/PZQXH8V/27.png", "https://i.ibb.co/Kzkk59k/15.png", "https://i.ibb.co/kBd2NTS/39.png",  "https://i.ibb.co/rb4rrJL/26.png", "https://i.ibb.co/1nxNGHL/10.png"];
+                
+                if(weatherData.days[0].hours[0].icon === "partly-cloudy-day") {
+                    document.getElementById("zerothImage").src=`${dayImage[0]}`
+                } else if(weatherData.days[0].hours[0].icon === "partly-cloudy-night") {
+                    document.getElementById("zerothImage").src=`${dayImage[1]}`
+                } else if(weatherData.days[0].hours[0].icon === "rain") {
+                    document.getElementById("zerothImage").src=`${dayImage[2]}`
+                } else if(weatherData.days[0].hours[0].icon === "clear-day") { 
+                    document.getElementById("zerothImage").src=`${dayImage[3]}`
+                } else if(weatherData.days[0].hours[0].icon === "clear-night") {
+                    document.getElementById("zerothImage").src=`${dayImage[4]}`
+                }
+                
+                if(weatherData.days[0].hours[1].icon === "partly-cloudy-day") {
+                    document.getElementById("firstImage").src=`${dayImage[0]}`
+                } else if(weatherData.days[0].hours[1].icon === "partly-cloudy-night") {
+                    document.getElementById("firstImage").src=`${dayImage[1]}`
+                } else if(weatherData.days[0].hours[1].icon === "rain") {
+                    document.getElementById("firstImage").src=`${dayImage[2]}`
+                } else if(weatherData.days[0].hours[1].icon === "clear-day") { 
+                    document.getElementById("firstImage").src=`${dayImage[3]}`
+                } else if(weatherData.days[0].hours[1].icon === "clear-night") {
+                    document.getElementById("firstImage").src=`${dayImage[4]}`
+                }
+                
+                if(weatherData.days[0].hours[2].icon === "partly-cloudy-day") {
+                    document.getElementById("secondImage").src=`${dayImage[0]}`
+                } else if(weatherData.days[0].hours[2].icon === "partly-cloudy-night") {
+                    document.getElementById("secondImage").src=`${dayImage[1]}`
+                } else if(weatherData.days[0].hours[2].icon === "rain") {
+                    document.getElementById("secondImage").src=`${dayImage[2]}`
+                } else if(weatherData.days[0].hours[2].icon === "clear-day") { 
+                    document.getElementById("secondImage").src=`${dayImage[3]}`
+                } else if(weatherData.days[0].hours[2].icon === "clear-night") {
+                    document.getElementById("secondImage").src=`${dayImage[4]}`
+                }
+                
+                if(weatherData.days[0].hours[3].icon === "partly-cloudy-day") {
+                    document.getElementById("thirdImage").src=`${dayImage[0]}`
+                } else if(weatherData.days[0].hours[3].icon === "partly-cloudy-night") {
+                    document.getElementById("thirdImage").src=`${dayImage[1]}`
+                } else if(weatherData.days[0].hours[3].icon === "rain") {
+                    document.getElementById("thirdImage").src=`${dayImage[2]}`
+                } else if(weatherData.days[0].hours[3].icon === "clear-day") { 
+                    document.getElementById("thirdImage").src=`${dayImage[3]}`
+                } else if(weatherData.days[0].hours[3].icon === "clear-night") {
+                    document.getElementById("thirdImage").src=`${dayImage[4]}`
+                }
+                
+                if(weatherData.days[0].hours[4].icon === "partly-cloudy-day") {
+                    document.getElementById("fourthImage").src=`${dayImage[0]}`
+                } else if(weatherData.days[0].hours[4].icon === "partly-cloudy-night") {
+                    document.getElementById("fourthImage").src=`${dayImage[1]}`
+                } else if(weatherData.days[0].hours[4].icon === "rain") {
+                    document.getElementById("fourthImage").src=`${dayImage[2]}`
+                } else if(weatherData.days[0].hours[4].icon === "clear-day") { 
+                    document.getElementById("fourthImage").src=`${dayImage[3]}`
+                } else if(weatherData.days[0].hours[4].icon === "clear-night") {
+                    document.getElementById("fourthImage").src=`${dayImage[4]}`
+                }
+                
+                if(weatherData.days[0].hours[5].icon === "partly-cloudy-day") {
+                    document.getElementById("fifthImage").src=`${dayImage[0]}`
+                } else if(weatherData.days[0].hours[5].icon === "partly-cloudy-night") {
+                    document.getElementById("fifthImage").src=`${dayImage[1]}`
+                } else if(weatherData.days[0].hours[5].icon === "rain") {
+                    document.getElementById("fifthImage").src=`${dayImage[2]}`
+                } else if(weatherData.days[0].hours[5].icon === "clear-day") { 
+                    document.getElementById("fifthImage").src=`${dayImage[3]}`
+                } else if(weatherData.days[0].hours[5].icon === "clear-night") {
+                    document.getElementById("fifthImage").src=`${dayImage[4]}`
+                }
+                
+                if(weatherData.days[0].hours[6].icon === "partly-cloudy-day") {
+                    document.getElementById("sixthImage").src=`${dayImage[0]}`
+                } else if(weatherData.days[0].hours[6].icon === "partly-cloudy-night") {
+                    document.getElementById("sixthImage").src=`${dayImage[1]}`
+                } else if(weatherData.days[0].hours[6].icon === "rain") {
+                    document.getElementById("sixthImage").src=`${dayImage[2]}`
+                } else if(weatherData.days[0].hours[6].icon === "clear-day") { 
+                    document.getElementById("sixthImage").src=`${dayImage[3]}`
+                } else if(weatherData.days[0].hours[6].icon === "clear-night") {
+                    document.getElementById("sixthImage").src=`${dayImage[4]}`
+                }
+                
+                if(weatherData.days[0].hours[7].icon === "partly-cloudy-day") {
+                    document.getElementById("seventhImage").src=`${dayImage[0]}`
+                } else if(weatherData.days[0].hours[7].icon === "partly-cloudy-night") {
+                    document.getElementById("seventhImage").src=`${dayImage[1]}`
+                } else if(weatherData.days[0].hours[7].icon === "rain") {
+                    document.getElementById("seventhImage").src=`${dayImage[2]}`
+                } else if(weatherData.days[0].hours[7].icon === "clear-day") { 
+                    document.getElementById("seventhImage").src=`${dayImage[3]}`
+                } else if(weatherData.days[0].hours[7].icon === "clear-night") {
+                    document.getElementById("seventhImage").src=`${dayImage[4]}`
+                }
+                
+                if(weatherData.days[0].hours[8].icon === "partly-cloudy-day") {
+                    document.getElementById("eighthImage").src=`${dayImage[0]}`
+                } else if(weatherData.days[0].hours[8].icon === "partly-cloudy-night") {
+                    document.getElementById("eighthImage").src=`${dayImage[1]}`
+                } else if(weatherData.days[0].hours[8].icon === "rain") {
+                    document.getElementById("eighthImage").src=`${dayImage[2]}`
+                } else if(weatherData.days[0].hours[8].icon === "clear-day") { 
+                    document.getElementById("eighthImage").src=`${dayImage[3]}`
+                } else if(weatherData.days[0].hours[8].icon === "clear-night") {
+                    document.getElementById("eighthImage").src=`${dayImage[4]}`
+                }
+                
+                if(weatherData.days[0].hours[9].icon === "partly-cloudy-day") {
+                    document.getElementById("ninthImage").src=`${dayImage[0]}`
+                } else if(weatherData.days[0].hours[9].icon === "partly-cloudy-night") {
+                    document.getElementById("ninthImage").src=`${dayImage[1]}`
+                } else if(weatherData.days[0].hours[9].icon === "rain") {
+                    document.getElementById("ninthImage").src=`${dayImage[2]}`
+                } else if(weatherData.days[0].hours[9].icon === "clear-day") { 
+                    document.getElementById("ninthImage").src=`${dayImage[3]}`
+                } else if(weatherData.days[0].hours[9].icon === "clear-night") {
+                    document.getElementById("ninthImage").src=`${dayImage[4]}`
+                }
+                
+                if(weatherData.days[0].hours[10].icon === "partly-cloudy-day") {
+                    document.getElementById("tenthImage").src=`${dayImage[0]}`
+                } else if(weatherData.days[0].hours[10].icon === "partly-cloudy-night") {
+                    document.getElementById("tenthImage").src=`${dayImage[1]}`
+                } else if(weatherData.days[0].hours[10].icon === "rain") {
+                    document.getElementById("tenthImage").src=`${dayImage[2]}`
+                } else if(weatherData.days[0].hours[10].icon === "clear-day") { 
+                    document.getElementById("tenthImage").src=`${dayImage[3]}`
+                } else if(weatherData.days[0].hours[10].icon === "clear-night") {
+                    document.getElementById("tenthImage").src=`${dayImage[4]}`
+                }
+                
+                if(weatherData.days[0].hours[11].icon === "partly-cloudy-day") {
+                    document.getElementById("eleventhImage").src=`${dayImage[0]}`
+                } else if(weatherData.days[0].hours[11].icon === "partly-cloudy-night") {
+                    document.getElementById("eleventhImage").src=`${dayImage[1]}`
+                } else if(weatherData.days[0].hours[11].icon === "rain") {
+                    document.getElementById("eleventhImage").src=`${dayImage[2]}`
+                } else if(weatherData.days[0].hours[11].icon === "clear-day") { 
+                    document.getElementById("eleventhImage").src=`${dayImage[3]}`
+                } else if(weatherData.days[0].hours[11].icon === "clear-night") {
+                    document.getElementById("eleventhImage").src=`${dayImage[4]}`
+                }
+                
+                if(weatherData.days[0].hours[12].icon === "partly-cloudy-day") {
+                    document.getElementById("twelfthImage").src=`${dayImage[0]}`
+                } else if(weatherData.days[0].hours[12].icon === "partly-cloudy-night") {
+                    document.getElementById("twelfthImage").src=`${dayImage[1]}`
+                } else if(weatherData.days[0].hours[12].icon === "rain") {
+                    document.getElementById("twelfthImage").src=`${dayImage[2]}`
+                } else if(weatherData.days[0].hours[12].icon === "clear-day") { 
+                    document.getElementById("twelfthImage").src=`${dayImage[3]}`
+                } else if(weatherData.days[0].hours[12].icon === "clear-night") {
+                    document.getElementById("twelfthImage").src=`${dayImage[4]}`
+                }
+                
+                if(weatherData.days[0].hours[13].icon === "partly-cloudy-day") {
+                    document.getElementById("thirteenthImage").src=`${dayImage[0]}`
+                } else if(weatherData.days[0].hours[13].icon === "partly-cloudy-night") {
+                    document.getElementById("thirteenthImage").src=`${dayImage[1]}`
+                } else if(weatherData.days[0].hours[13].icon === "rain") {
+                    document.getElementById("thirteenthImage").src=`${dayImage[2]}`
+                } else if(weatherData.days[0].hours[13].icon === "clear-day") { 
+                    document.getElementById("thirteenthImage").src=`${dayImage[3]}`
+                } else if(weatherData.days[0].hours[13].icon === "clear-night") {
+                    document.getElementById("thirteenthImage").src=`${dayImage[4]}`
+                }
+                
+                if(weatherData.days[0].hours[14].icon === "partly-cloudy-day") {
+                    document.getElementById("fourteenthImage").src=`${dayImage[0]}`
+                } else if(weatherData.days[0].hours[14].icon === "partly-cloudy-night") {
+                    document.getElementById("fourteenthImage").src=`${dayImage[1]}`
+                } else if(weatherData.days[0].hours[14].icon === "rain") {
+                    document.getElementById("fourteenthImage").src=`${dayImage[2]}`
+                } else if(weatherData.days[0].hours[14].icon === "clear-day") { 
+                    document.getElementById("fourteenthImage").src=`${dayImage[3]}`
+                } else if(weatherData.days[0].hours[14].icon === "clear-night") {
+                    document.getElementById("fourteenthImage").src=`${dayImage[4]}`
+                }
+                
+                if(weatherData.days[0].hours[15].icon === "partly-cloudy-day") {
+                    document.getElementById("fifteenthImage").src=`${dayImage[0]}`
+                } else if(weatherData.days[0].hours[15].icon === "partly-cloudy-night") {
+                    document.getElementById("fifteenthImage").src=`${dayImage[1]}`
+                } else if(weatherData.days[0].hours[15].icon === "rain") {
+                    document.getElementById("fifteenthImage").src=`${dayImage[2]}`
+                } else if(weatherData.days[0].hours[15].icon === "clear-day") { 
+                    document.getElementById("fifteenthImage").src=`${dayImage[3]}`
+                } else if(weatherData.days[0].hours[15].icon === "clear-night") {
+                    document.getElementById("fifteenthImage").src=`${dayImage[4]}`
+                }
+                
+                if(weatherData.days[0].hours[16].icon === "partly-cloudy-day") {
+                    document.getElementById("sixteenthImage").src=`${dayImage[0]}`
+                } else if(weatherData.days[0].hours[16].icon === "partly-cloudy-night") {
+                    document.getElementById("sixteenthImage").src=`${dayImage[1]}`
+                } else if(weatherData.days[0].hours[16].icon === "rain") {
+                    document.getElementById("sixteenthImage").src=`${dayImage[2]}`
+                } else if(weatherData.days[0].hours[16].icon === "clear-day") { 
+                    document.getElementById("sixteenthImage").src=`${dayImage[3]}`
+                } else if(weatherData.days[0].hours[16].icon === "clear-night") {
+                    document.getElementById("sixteenthImage").src=`${dayImage[4]}`
+                }
+                
+                if(weatherData.days[0].hours[17].icon === "partly-cloudy-day") {
+                    document.getElementById("seventeenthImage").src=`${dayImage[0]}`
+                } else if(weatherData.days[0].hours[17].icon === "partly-cloudy-night") {
+                    document.getElementById("seventeenthImage").src=`${dayImage[1]}`
+                } else if(weatherData.days[0].hours[17].icon === "rain") {
+                    document.getElementById("seventeenthImage").src=`${dayImage[2]}`
+                } else if(weatherData.days[0].hours[17].icon === "clear-day") { 
+                    document.getElementById("seventeenthImage").src=`${dayImage[3]}`
+                } else if(weatherData.days[0].hours[17].icon === "clear-night") {
+                    document.getElementById("seventeenthImage").src=`${dayImage[4]}`
+                }
+                
+                if(weatherData.days[0].hours[18].icon === "partly-cloudy-day") {
+                    document.getElementById("eighteenthImage").src=`${dayImage[0]}`
+                } else if(weatherData.days[0].hours[18].icon === "partly-cloudy-night") {
+                    document.getElementById("eighteenthImage").src=`${dayImage[1]}`
+                } else if(weatherData.days[0].hours[18].icon === "rain") {
+                    document.getElementById("eighteenthImage").src=`${dayImage[2]}`
+                } else if(weatherData.days[0].hours[18].icon === "clear-day") { 
+                    document.getElementById("eighteenthImage").src=`${dayImage[3]}`
+                } else if(weatherData.days[0].hours[18].icon === "clear-night") {
+                    document.getElementById("eighteenthImage").src=`${dayImage[4]}`
+                }
+                
+                if(weatherData.days[0].hours[19].icon === "partly-cloudy-day") {
+                    document.getElementById("nineteenthImage").src=`${dayImage[0]}`
+                } else if(weatherData.days[0].hours[19].icon === "partly-cloudy-night") {
+                    document.getElementById("nineteenthImage").src=`${dayImage[1]}`
+                } else if(weatherData.days[0].hours[19].icon === "rain") {
+                    document.getElementById("nineteenthImage").src=`${dayImage[2]}`
+                } else if(weatherData.days[0].hours[19].icon === "clear-day") { 
+                    document.getElementById("nineteenthImage").src=`${dayImage[3]}`
+                } else if(weatherData.days[0].hours[19].icon === "clear-night") {
+                    document.getElementById("nineteenthImage").src=`${dayImage[4]}`
+                }
+                
+                if(weatherData.days[0].hours[20].icon === "partly-cloudy-day") {
+                    document.getElementById("twentiethImage").src=`${dayImage[0]}`
+                } else if(weatherData.days[0].hours[20].icon === "partly-cloudy-night") {
+                    document.getElementById("twentiethImage").src=`${dayImage[1]}`
+                } else if(weatherData.days[0].hours[20].icon === "rain") {
+                    document.getElementById("twentiethImage").src=`${dayImage[2]}`
+                } else if(weatherData.days[0].hours[20].icon === "clear-day") { 
+                    document.getElementById("twentiethImage").src=`${dayImage[3]}`
+                } else if(weatherData.days[0].hours[20].icon === "clear-night") {
+                    document.getElementById("twentiethImage").src=`${dayImage[4]}`
+                }
+                
+                if(weatherData.days[0].hours[21].icon === "partly-cloudy-day") {
+                    document.getElementById("twentyFirstImage").src=`${dayImage[0]}`
+                } else if(weatherData.days[0].hours[21].icon === "partly-cloudy-night") {
+                    document.getElementById("twentyFirstImage").src=`${dayImage[1]}`
+                } else if(weatherData.days[0].hours[21].icon === "rain") {
+                    document.getElementById("twentyFirstImage").src=`${dayImage[2]}`
+                } else if(weatherData.days[0].hours[21].icon === "clear-day") { 
+                    document.getElementById("twentyFirstImage").src=`${dayImage[3]}`
+                } else if(weatherData.days[0].hours[21].icon === "clear-night") {
+                    document.getElementById("twentyFirstImage").src=`${dayImage[4]}`
+                }
+                
+                if(weatherData.days[0].hours[22].icon === "partly-cloudy-day") {
+                    document.getElementById("twentySecondImage").src=`${dayImage[0]}`
+                } else if(weatherData.days[0].hours[22].icon === "partly-cloudy-night") {
+                    document.getElementById("twentySecondImage").src=`${dayImage[1]}`
+                } else if(weatherData.days[0].hours[22].icon === "rain") {
+                    document.getElementById("twentySecondImage").src=`${dayImage[2]}`
+                } else if(weatherData.days[0].hours[22].icon === "clear-day") { 
+                    document.getElementById("twentySecondImage").src=`${dayImage[3]}`
+                } else if(weatherData.days[0].hours[22].icon === "clear-night") {
+                    document.getElementById("twentySecondImage").src=`${dayImage[4]}`
+                }
+                
+                if(weatherData.days[0].hours[23].icon === "partly-cloudy-day") {
+                    document.getElementById("twentyThirdImage").src=`${dayImage[0]}`
+                } else if(weatherData.days[0].hours[23].icon === "partly-cloudy-night") {
+                    document.getElementById("twentyThirdImage").src=`${dayImage[1]}`
+                } else if(weatherData.days[0].hours[23].icon === "rain") {
+                    document.getElementById("twentyThirdImage").src=`${dayImage[2]}`
+                } else if(weatherData.days[0].hours[23].icon === "clear-day") { 
+                    document.getElementById("twentyThirdImage").src=`${dayImage[3]}`
+                } else if(weatherData.days[0].hours[23].icon === "clear-night") {
+                    document.getElementById("twentyThirdImage").src=`${dayImage[4]}`
                 }
             }).catch((err)=>{
                 alert("Unable to fetech the City");
                 console.log(err);
             })
-        
-        
+
+                        

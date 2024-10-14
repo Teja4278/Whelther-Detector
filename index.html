@@ -34,49 +34,57 @@
               <div class="weatherIcon" >
                 <img src="./assets/weatherIcons/partly-cloudy-day" alt="WeatherIconImage" id="headIcon">
               </div>
+
               <div class="temperatureDate">
                 <div class="temperture">
                     <p id="temperature">0°C</p>
                 </div>
                 <div class="daytime">
-                  <p id="dayTime">Saturday 13:00</p>
-                </div>
-                <br>
-                <div class="line"></div>
-                 <br>
-                <div class="cloud">
-                  <i class="fa-solid fa-cloud" style="color: #010204;"></i>
-                    <p id="cloud">Partially Cloudy</p>
-                 </div>
-                   <br>
+                    <p id="dayTime">Saturday 13:00</p>
+                </div>
             </div>
+            <br>
+            <div class="line"></div>
+            <br>
+            <div class="cloud">
+                <i class="fa-solid fa-cloud" style="color: #010204;"></i>
+
+                <p id="cloud">Partially Cloudy</p>
+
+            </div>
+            <br>
             <div class="precp">
-              <i class="fa-solid fa-droplet" style="color: #000000;"></i>
-              <p id="precp">Perc - 0%</p>
-          </div>
+                <i class="fa-solid fa-droplet" style="color: #000000;"></i>
+                <p id="precp">Perc - 0%</p>
+            </div>
 
-          <div class="location">
-              <i class="fa-solid fa-location-dot" style="color: #000000;"></i>
-              <p id="location">Location</p>
-          </div>
+            <div class="location">
+                <i class="fa-solid fa-location-dot" style="color: #000000;"></i>
+                <p id="location">Location</p>
+            </div>
+
+
+
             </aside>
-             <!-- Day wise weather information -->
 
-             <aside class="rightSide">
+            <!-- Day wise weather information -->
 
-              <div class="heading">
+            <aside class="rightSide">
 
-                  <ul>
-                      <li id="todayPage">Today</li>
-                      <li id="weekPage">Week</li>
-                      <li><span id="cButton" >&#8451</span></li>
-                      <li><pre id="fButton" >&#8457</pre></li>   
-                  </ul>
+                <div class="heading">
 
-              </div>
-              <!-- Day wise cards -->
+                    <ul>
+                        <li id="todayPage">Today</li>
+                        <li id="weekPage">Week</li>
+                        <li><span id="cButton" >&#8451</span></li>
+                        <li><pre id="fButton" >&#8457</pre></li>   
+                    </ul>
 
-              <div class="dayCards" id="todayData">
+                </div>
+
+                <!-- Day wise cards -->
+
+                <div class="dayCards" id="todayData">
                 <section>
                   <h5>00.00 AM</h5>
                   <img src="./assets/weatherIcons/clear-day" alt="img" id="zerothImage">
@@ -199,52 +207,57 @@
                   <p id="twentyThree">0°C</p>
                 </section>
             </div>
- <!-- weekData -->
- <div class="dayCards" id="weekData">
 
- </div>
+            <!-- weekData -->
+            <div class="dayCards" id="weekData">
 
- <!-- Highlight cards Information -->
+            </div>
 
- <div class="highlights">
-     <h4>Today's Highlights</h4>
- </div>
- <div class="highlightCards">
-     <section>
-       <h4 class="highlightHeading">UV Index</h4>
-       <p class="highlightPara" id="uvIndex">--</p>
-       <p id="uvvalue">--</p>
-     </section>
-     <section>
-       <h4 class="highlightHeading">Wind Status</h4>
-       <p class="highlightPara" id="windStatus">--</p>
-       <p>km/h</p>
-     </section>
-     <section>
-       <h4 class="highlightHeading">Sunrise & Sunset</h4>
-       <p class="highlightPara" id="sunrise">--</p>
-       <p id="sunset">--</p>
-     </section>
-     <section>
-       <h4 class="highlightHeading">Humidity</h4>
-       <p class="highlightPara" id="humidity">--</p>
-       <p id="humidityValue">--</p>
-     </section>
-     <section>
-       <h4 class="highlightHeading">Visibility</h4>
-       <p class="highlightPara" id="visibility">--</p>
-       <p id="visibilityValue">--</p>
-     </section>
-     <section>
-       <h4 class="highlightHeading">Air Quality</h4>
-       <p class="highlightPara" id="airquality">--</p>
-       <p id="airValue"></p>
-     </section>
- </div>
- </aside>
-</section>
-</div>
+            <!-- Highlight cards Information -->
+
+            <div class="highlights">
+                <h4>Today's Highlights</h4>
+            </div>
+            <div class="highlightCards">
+                <section>
+                  <h4 class="highlightHeading">UV Index</h4>
+                  <p class="highlightPara" id="uvIndex">--</p>
+                  <p id="uvvalue">--</p>
+                </section>
+                <section>
+                  <h4 class="highlightHeading">Wind Status</h4>
+                  <p class="highlightPara" id="windStatus">--</p>
+                  <p>km/h</p>
+                </section>
+                <section>
+                  <h4 class="highlightHeading">Sunrise & Sunset</h4>
+                  <p class="highlightPara" id="sunrise">--</p>
+                  <p id="sunset">--</p>
+                </section>
+                <section>
+                  <h4 class="highlightHeading">Humidity</h4>
+                  <p class="highlightPara" id="humidity">--</p>
+                  <p id="humidityValue">--</p>
+                </section>
+                <section>
+                  <h4 class="highlightHeading">Visibility</h4>
+                  <p class="highlightPara" id="visibility">--</p>
+                  <p id="visibilityValue">--</p>
+                </section>
+                <section>
+                  <h4 class="highlightHeading">Air Quality</h4>
+                  <p class="highlightPara" id="airquality">--</p>
+                  <p id="airValue"></p>
+                </section>
+            </div>
+
+            </aside>
         </section>
+
+       
+      </div>
+    </section>
+
     <script src="./app.js"></script>
   </body>
 </html>

@@ -26,7 +26,7 @@ function weatherReport(){
             
         })
         .then((jsonData) => {
-             console.log(jsonData);
+            // console.log(jsonData);
 
             // Getting the data with the help oF DOM from HTML
 
@@ -174,7 +174,7 @@ function weatherReport(){
                     <section>
                     <h6>Wednesday</h6>
                     <img src="" alt="img" id="weekImage1">
-                    <p class = "onedata">${weatherData.days[0].temp}°C</p>
+                    <p class = "onedata">${jsonData.days[0].temp}°C</p>
                     </section>
  
         
@@ -872,7 +872,7 @@ function weatherReport(){
        
             
         }).catch((err)=>{
-            alert("Unable to fetech the City");
+            alert("City Not Found in API");
             console.log(err);
         })
     }

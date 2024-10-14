@@ -64,6 +64,23 @@
     align-items: flex-start;
     margin-left: 40px;
 }
+precp{
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    margin-left: 40px;
+}
+
+.location{
+    display: flex;
+    gap: 23px;
+    justify-content: center;
+    /* align-items:flex-end;
+    height: 100%; */
+    margin-top: 310vh;
+    
+}
+
 
 
 

@@ -34,5 +34,12 @@
     height: 140px;
     width:150px;
 }
+.temperatureDate{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    margin-top: 20px;
+    margin-left: 10px;
+}
 
 

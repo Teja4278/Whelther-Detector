@@ -51,6 +51,20 @@
     font-size: large;
     margin-left: 10px;     
 }
+.line{
+    height: 2px;
+    width: 100%;
+    background-color: rgb(232, 230, 230);
+    
+}
+
+.cloud{
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    margin-left: 40px;
+}
+
 
 
 
